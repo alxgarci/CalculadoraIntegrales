@@ -3,7 +3,7 @@
 
 La calculadora es un proyecto grupal propuesto para resolver una serie de integrales, introduciendo la f(x) y los extremos.
 
-El proyecto ha sido realizado por [NOMBRES].
+El proyecto ha sido realizado por Alejandro García, Ali Hasanzade, Ángel Esquinas, Victor Vega y Jaime García.
 
 Se ha usado Maven para implementar las librerías necesarias.
 

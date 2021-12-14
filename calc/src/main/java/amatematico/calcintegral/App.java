@@ -45,7 +45,8 @@ public class App
                     System.out.println("--------------------------------------------------------------------------------");
                     System.out.println("---------------------------- GRUPO A. MATEMÁTICO -------------------------------");
                     System.out.println("--------------------------------------------------------------------------------");
-                    System.out.println("Trabajo realizado por . . . . . . . . . .");
+                    System.out.println("    Trabajo realizado por Alejandro García, Ali Hasanzade, Ángel Esquinas," + 
+                                       "\n                        Victor Vega y Jaime García");
                     break;
             
                 case OPCION_TRAPECIOS:
