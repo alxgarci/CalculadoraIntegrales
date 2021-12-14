@@ -82,8 +82,8 @@ public class App
 
         for (int i = 1; i <= nTrapecios; i++) {
             //Sacamos el x1 y x2 para el trapecio 'i' en el que nos encontramos
-            p1 = (i-1) * ancho;
-            p2 = (i) * ancho;
+            p1 = integral.getExtremoIzqdo() + (i-1) * ancho;
+            p2 = integral.getExtremoIzqdo() + (i) * ancho;
 
             //Calculamos la altura de cada uno de los lados, siendo f(xi-1) y f(xi) la izquierda
             //y la derecha, respectivamente. Con el metodo checkCero, comprobamos si el valor es 0,
