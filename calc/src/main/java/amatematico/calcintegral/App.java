@@ -38,7 +38,7 @@ public class App
                     break;
 
                 case OPCION_DOC:
-                    System.out.println("--------------------------------------------------------------------------------");
+                    System.out.println("\n--------------------------------------------------------------------------------");
                     System.out.println("----------------------------- LICENCIA mXparser --------------------------------");
                     System.out.println("--------------------------------------------------------------------------------");
                     mXparser.consolePrint(mXparser.LICENSE);
@@ -58,6 +58,7 @@ public class App
     }
 
     private static void resolverTrapecios() {
+        //Pedimos los datos de la integral, f(x) y extremos
         Integral integral = readIntegral();
 
         System.out.println("[S] Introduce el número de trapecios para utilizar:");
@@ -118,8 +119,6 @@ public class App
             System.out.println("[RESULTADO INTEGRAL] " + aTotal);
         }
 
-
-
     }
 
     private static void resolverExacta() {
@@ -148,12 +147,6 @@ public class App
 
     private static void resolverRectangulos() {
         //Pedimos los datos de la integral, f(x) y extremos
-        System.out.println("\n[INFO] Introduccion correcta de f(x)" +
-        "\n  Para introducir la funcion, debes tener en cuenta la nomenclatura" +
-        "\n  estandar (sin,cos,...), la incognita debe ser 'x' y sin incluir" +
-        "\n  extras como extremos, que se solicitaran mas tarde. Las raices" +
-        "\n  cuadradas se representan como sqrt(INTERIOR)");
-        
         Integral integral = readIntegral();
 
         //Inicializamos las variables fuera del bucle
@@ -233,6 +226,11 @@ public class App
 
     private static Integral readIntegral() {
         Integral res = new Integral();
+        System.out.println(
+                "\n[INFO] Introduccion correcta de f(x): Para introducir la función, debes tener en" +
+                 "cuenta la nomenclatura estándar en línea (sin,cos,^2,...), la incógnita debe ser 'x'" +
+                  "y sin incluir extras como extremos, que se solicitarán mas tarde. Las raíces cuadradas" +
+                   "se representan como sqrt(INTERIOR), y las elevaciones se expresan como x^n (donde n es la potencia)");
         System.out.println("\n[S] Introduce la f(x) de la integral:");
         res.setParteIntegral(sc.nextLine());
         System.out.println("[S] Introduce el extremo derecho:");
