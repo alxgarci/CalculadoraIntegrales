@@ -13,7 +13,7 @@ Se ha usado Maven para implementar las librerías necesarias.
 La calculadora contiene las siguientes opciones:
 - Resolver integrales de forma exacta
 - Resolver integrales por el método de los rectángulos
-- *Resolver integrales por el método de los trapecios* (Por implementar)
+- Resolver integrales por el método de los trapecios
 
 ## Librerías usadas
 

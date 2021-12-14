@@ -64,6 +64,8 @@ public class App
         int nTrapecios = sc.nextInt();
         sc.nextLine();
 
+        System.out.println("[S] CALCULANDO LA INTEGRAL '" + integral.getParteIntegral() + "' (MÉTODO DE LOS TRAPECIOS)");
+
         double ancho, area, fx1, fx2;
         double p1, p2, aux;
         double aTotal = 0;
@@ -161,7 +163,7 @@ public class App
         //Argument sera la clase que evalue la X a sustituir en la expresion introducida,
         //Expression sera la clase que nos 'evalue' la expresion introducida, sustituyendo
         //en ella la 'x' por el valor especificado.
-        Argument x;
+        Argument x = new Argument("x", 0);
         Expression e;
 
         System.out.println("[S] Introduce el número de rectángulos para utilizar:");
@@ -177,16 +179,12 @@ public class App
         //Sustituimos 'dx' por '1' para introducirlo en el compilador, en caso de que se
         //haya introducido, para evitar errores
         String fncX = integral.getParteIntegral().replaceAll("dx", "1");
+        e = new Expression(fncX, x);
         
         for (int i = 1;i <= nRectangulos;i++)
         {
-            //Con este metodo, si el extremo izquierdo es 0, lo aproximamos al siguiente valor que no es 0,
-            //un valor minimo para poder realizar ciertas operaciones como aproximar la division entre 0,
-            //donde la funcion no es continua.
-            if (i == 1 && integral.getExtremoIzqdo() == 0) {
-                x = new Argument("x", MIN2_NOCERO);
-            } else {
-                /*
+
+            /*
                  * Establecemos el valor de la x para mas tarde poder calcular la altura (f(x)).
                  * Para cualquier rectangulo, tenemos que sacar la altura (= f(x)). Para saber el
                  * valor de f(x) para el 'Z' rectangulo, por ejemplo, tendriamos que despejar en la funcion
@@ -194,14 +192,12 @@ public class App
                  * en que nos encontremos multiplicado por el ancho de cada intervalo. Esta seria la distancia
                  * que nos encontramos respecto del extremo izqdo, luego tendremos que sumarselo al extremo izqdo
                  * que se ha especificado.
+                 * Debajo especificamos la x que vamos a sustituir en f(x) y con el metodo checkCero, comprobamos si el valor es 0,
+                 * que puede no existir la f(0) en algunas funciones, y se sustituye por 0.000001 para aproximarlo.
                  */
-                
-                x = new Argument("x", integral.getExtremoIzqdo() + (i-1)*ancho); 
-            }
-            
-            //Establecemos la variable "x" para sustituir en f(x)
-            e = new Expression(fncX, x);
 
+            e.setArgumentValue("x",checkCero(integral.getExtremoIzqdo() + (i-1)*ancho));
+            
             //Evaluamos (calculamos), f(x) con la x sustituida con el valor establecido previamente
             //para hallar la altura del rectangulo
             fx = e.calculate();
@@ -213,7 +209,7 @@ public class App
             DecimalFormat decimalFormat = new DecimalFormat("###0.0000");
             DecimalFormat decimalFormat2 = new DecimalFormat("###0.0000000000");
             DecimalFormat decimalFormat3 = new DecimalFormat("###000");
-            System.out.println("[INTEGRAL R" + decimalFormat3.format(i) +"] x=" + decimalFormat.format(x.getArgumentValue()) + " f(x)=" + decimalFormat2.format(fx) + " area=" + decimalFormat2.format(area));
+            System.out.println("[INTEGRAL R" + decimalFormat3.format(i) +"] x=" + decimalFormat.format(e.getArgumentValue("x")) + " f(x)=" + decimalFormat2.format(fx) + " area=" + decimalFormat2.format(area));
 
             //Finalmente sumamos el area del rectangulo al total ya sumado si es numero, si es NaN (Not A Number) se trata
             //de un valor que no existe, por lo tanto el valor no existe en ese punto, no se suma nada.
