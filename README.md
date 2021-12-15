@@ -1,6 +1,5 @@
 # Calculadora de Integrales en JAVA
 
-- [Calculadora de Integrales en JAVA](#calculadora-de-integrales-en-java)
   - [Introducción](#introducción)
   - [Características](#características)
   - [Ejemplo de uso](#ejemplo-de-uso)
