@@ -1,0 +1,31 @@
+Argument a = new Argument("x", 1);
+Expression e;
+...
+e = new Expression(fncX, a);
+
+ancho = (integral.getExtremoDcho()-integral.getExtremoIzqdo())/nTrapecios;
+
+ for (int i = 1; i <= nTrapecios; i++) {
+
+            p1 = integral.getExtremoIzqdo() + (i-1) * ancho;
+            p2 = integral.getExtremoIzqdo() + (i) * ancho;
+
+	    e.setArgumentValue("x", checkCero(p1));
+            fx1 = e.calculate();
+            e.setArgumentValue("x", checkCero(p2));
+            fx2 = e.calculate();
+	    ...
+            aux = ifNan(fx1)+ifNan(fx2);
+            area = ancho * (aux/2); //a = h*((f(x1)+f(x2))/2)
+	    ...
+            ...
+
+            if (!Double.isNaN(area)) { //Si el area es un numero (existe) se suma al total
+                aTotal += area; 
+            }
+            ...
+        }
+...
+System.out.println("[RESULTADO INTEGRAL] " + aTotal);
+
+
