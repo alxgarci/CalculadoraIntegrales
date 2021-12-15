@@ -47,7 +47,7 @@ Se evalúa obteniendo el punto izquierdo y derecho,  ![ecuacion](https://latex.c
 ## Ejecución
 
 - Necesario Java JDK o JRE
-- Descarga última versión [ejecutable .jar](/releases/)
+- Descarga última versión [ejecutable .jar](https://github.com/alxgarci/CalculadoraIntegrales/releases/latest)
 - En terminal:
   
   ```
