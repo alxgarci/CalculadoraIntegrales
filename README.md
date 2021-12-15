@@ -28,9 +28,9 @@ La calculadora cuenta con las siguientes opciones:
 
 ## Ejemplo de uso
 
-Sobre la siguiente función introducida, y dividiéndolo en $n = 10$ rectángulos/trapecios (n es un valor especificado por el usuario).
+Sobre la siguiente función introducida, y dividiéndolo en ![ecuacion](https://latex.codecogs.com/png.latex?n=10) rectángulos/trapecios (n es un valor especificado por el usuario).
 
-$$\int_{0}^{1} \frac{sen(x)}{x} dx$$
+![ecuacion](https://latex.codecogs.com/png.latex?\int_{0}^{1}\frac{sen(x)}{x}dx)
 
 ### Método de los rectángulos
 
@@ -40,7 +40,7 @@ En este método se coge el punto izquierdo a la hora de encontrar la altura del 
 
 ### Método de los trapecios
 
-Se evalúa obteniendo el punto izquierdo y derecho,  $h \frac{f(x\underset{1}{}) + f(x\underset{2}{})}{2}$
+Se evalúa obteniendo el punto izquierdo y derecho,  ![ecuacion](https://latex.codecogs.com/png.latex?h\frac{f(x_{1})+f(x_{2})}{2})  
 
 ![ej4](imgs/ej4.png)
 
